@@ -19,7 +19,7 @@ conn
       console.log('\x1b[38;5;87mRemoving old build.\n\x1b[0m');
 
       stream
-        .on('close', (code, signal) => {
+        .on('close', () => {
           // 2. Upload build:
           conn.sftp((err, sftp) => {
             if (err) throw err;

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 console.log('\x1b[38;5;87mRunning post-build script.\n\x1b[0m');
 // Define paths
 const nxBuild = `dist/apps/angular-tribe`;
@@ -37,9 +38,24 @@ try {
     );
   }
 
-  // copy package.json
-  if (fs.existsSync('package.json')) {
-    fs.copyFileSync('package.json', 'dist/public_nodejs/package.json');
+  // copy package.json and cleanup server-irrelevant data
+  const srcPath = 'package.json';
+  const destPath = 'dist/public_nodejs/package.json';
+
+  if (fs.existsSync(srcPath)) {
+    // Read the original package.json
+    const packageJson = JSON.parse(fs.readFileSync(srcPath, 'utf8'));
+
+    // Remove unwanted fields
+    delete packageJson.scripts;
+    delete packageJson.devDependencies;
+
+    const destDir = path.dirname(destPath);
+    if (!fs.existsSync(destDir)) {
+      fs.mkdirSync(destDir, { recursive: true });
+    }
+
+    fs.writeFileSync(destPath, JSON.stringify(packageJson, null, 2));
   }
 
   console.log('\x1b[38;5;87mPost-build success.\n\x1b[0m');
