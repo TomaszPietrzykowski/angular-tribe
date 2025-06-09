@@ -30,7 +30,7 @@ try {
   // Delete original backend build directory
   fs.rmSync(nxBuild, { recursive: true });
 
-  // copy .env
+  // Copy .env
   if (fs.existsSync('apps/angular-tribe/server/.env')) {
     fs.copyFileSync(
       'apps/angular-tribe/server/.env',
@@ -38,7 +38,7 @@ try {
     );
   }
 
-  // copy package.json and cleanup server-irrelevant data
+  // Copy package.json and cleanup server-irrelevant data
   const srcPath = 'package.json';
   const destPath = 'dist/public_nodejs/package.json';
 

@@ -13,6 +13,36 @@ import { CommonModule } from '@angular/common';
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      -->
     <style>
+        :root {
+            --primary: rgb(255 0 106);
+            --muted: rgb(190 196 202);
+            --border: rgb(46 47 59);
+            --card: rgb(25 26 34);
+            --background: rgb(16 15 21);
+
+            --hot-pink: oklch(59.91% .239 8.14);
+            --hot-red: oklch(61.42% .238 15.34);
+            --vivid-pink: oklch(69.02% .277 332.77);
+            --orange-red: oklch(63.32% .24 31.68);
+            --electric-violet: oklch(53.18% .28 296.97);
+            --bright-blue: oklch(51.01% .274 263.83);
+            --page-background: white;
+
+            --red-to-pink-horizontal-gradient: linear-gradient(90deg, var(--hot-pink) 11.42%, var(--hot-red) 34.83%, var(--vivid-pink) 60.69%);
+            --red-to-pink-to-purple-horizontal-gradient: linear-gradient(90deg, var(--orange-red) 0%, var(--vivid-pink) 50%, var(--electric-violet) 100%);
+            --pink-to-highlight-to-purple-to-blue-horizontal-gradient: linear-gradient(140deg, var(--vivid-pink) 0%, var(--vivid-pink) 15%,
+                color-mix(in srgb, var(--vivid-pink), var(--electric-violet) 50%) 25%,
+                color-mix(in srgb, var(--vivid-pink), var(--electric-violet) 10%) 35%,
+                color-mix(in srgb, var(--vivid-pink), var(--orange-red) 50%) 42%,
+                color-mix(in srgb, var(--vivid-pink), var(--orange-red) 50%) 44%,
+                color-mix(in srgb, var(--vivid-pink), var(--page-background) 70%) 47%, var(--electric-violet) 48%, var(--bright-blue) 60%);
+            --purple-to-blue-horizontal-gradient: linear-gradient(90deg, var(--electric-violet) 0%, var(--bright-blue) 100%);
+            --purple-to-blue-vertical-gradient: linear-gradient(0deg, var(--electric-violet) 0%, var(--bright-blue) 100%);
+            --red-to-orange-horizontal-gradient: linear-gradient(90deg, var(--hot-pink) 0%, var(--orange-red) 100%);
+            --red-to-orange-vertical-gradient: linear-gradient(0deg, var(--hot-pink) 0%, var(--orange-red) 100%);
+            --pink-to-purple-horizontal-gradient: linear-gradient(90deg, var(--vivid-pink) 0%, var(--electric-violet) 100%);
+            --pink-to-purple-vertical-gradient: linear-gradient(0deg, var(--electric-violet) 0%, var(--vivid-pink) 100%);
+        }
       html {
         -webkit-text-size-adjust: 100%;
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
@@ -22,6 +52,9 @@ import { CommonModule } from '@angular/common';
         line-height: 1.5;
         tab-size: 4;
         scroll-behavior: smooth;
+                /* background: var(--purple-to-blue-vertical-gradient); */
+                /* background: var(--pink-to-purple-vertical-gradient); */
+                background: radial-gradient(circle at 70% 85%,var(--orange-red),var(--hot-pink), var(--electric-violet));
       }
       body {
         font-family: inherit;
@@ -75,6 +108,7 @@ import { CommonModule } from '@angular/common';
       .shadow {
         box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgba(0, 0, 0, 0.1),
           0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                  background-color: white;
       }
       .rounded {
         border-radius: 1.5rem;
@@ -89,17 +123,18 @@ import { CommonModule } from '@angular/common';
         padding-bottom: 3rem;
         padding-left: 1rem;
         padding-right: 1rem;
-        color: rgb(42, 124, 183);
+        color: rgb(77, 6, 89);
         width: 100%;
       }
       #welcome {
         margin-top: 2.5rem;
       }
       #welcome h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 500;
         letter-spacing: -0.025em;
         line-height: 1;
+        color: rgb(255, 255, 255);
       }
       #welcome span {
         display: block;
@@ -231,7 +266,7 @@ import { CommonModule } from '@angular/common';
       }
       .list-item-link:hover {
         color: rgba(255, 255, 255, 1);
-        background-color: hsla(162, 55%, 33%, 1);
+        background-color: rgba(255, 49, 140, 1);
       }
 
       .list-item-link:hover > span > span {
@@ -280,7 +315,7 @@ import { CommonModule } from '@angular/common';
         color: rgba(255, 255, 255, 1) !important;
       }
       .nx-console:hover {
-        background-color: rgba(0, 122, 204, 1);
+        background-color: var(--electric-violet);
       }
       .nx-console svg {
         color: rgba(0, 122, 204, 1);
