@@ -2,7 +2,17 @@
   "name": "@angular-tribe/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prerender": "http-server -c-1 dist/apps/angular-tribe/browser",
+    "dev:ssr": "nx serve angular-tribe",
+    "build:ssr": "nx build angular-tribe --configuration=production",
+    "serve:ssr": "node dist/apps/angular-tribe/server/server.mjs",
+    "prebuild": "node .pipelines/mydevil/prebuild.js",
+    "build": "npm run build:ssr",
+    "postbuild": "node .pipelines/mydevil/postbuild.js",
+    "mydevil": "npm run build && node .pipelines/mydevil/mydevil.pipeline.js || node .pipelines/mydevil/deployment-failed.js",
+    "deploy": "npm run unit-tests && npm run e2e-tests && npm run build && node .pipelines/mydevil/mydevil.pipeline.js || node .pipelines/mydevil/deployment-failed.js"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~19.2.0",
@@ -14,8 +24,10 @@
     "@angular/platform-server": "~19.2.0",
     "@angular/router": "~19.2.0",
     "@angular/ssr": "~19.2.0",
+    "dotenv": "^16.5.0",
     "express": "^4.21.2",
     "rxjs": "~7.8.0",
+    "ssh2": "^1.16.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
