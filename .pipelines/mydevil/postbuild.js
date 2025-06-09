@@ -28,14 +28,8 @@ try {
 
   // Delete original backend build directory
   fs.rmSync(nxBuild, { recursive: true });
-  //   if (fs.existsSync('dist/libs')) {
-  //     fs.rmSync('dist/libs', { recursive: true });
-  //   }
-  // flatten the build to dist folder
-  //   fs.cpSync('dist/temp', 'dist', {
-  //     recursive: true,
-  //   });
-  //   fs.rmSync('dist/temp', { recursive: true });
+
+  // copy .env
   if (fs.existsSync('apps/angular-tribe/server/.env')) {
     fs.copyFileSync(
       'apps/angular-tribe/server/.env',
@@ -43,6 +37,7 @@ try {
     );
   }
 
+  // copy package.json
   if (fs.existsSync('package.json')) {
     fs.copyFileSync('package.json', 'dist/public_nodejs/package.json');
   }
