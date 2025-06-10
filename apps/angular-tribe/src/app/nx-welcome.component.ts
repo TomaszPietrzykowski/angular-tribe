@@ -467,9 +467,6 @@ import { CommonModule } from '@angular/common';
       <div class="container_unique">
         <!--  WELCOME  -->
         <div id="welcome">
-          <h1>
-            ANGULAR TRIBE
-          </h1>
         </div>
         <!--  MIDDLE CONTENT  -->
         <div id="middle-content">
