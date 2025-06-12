@@ -31,34 +31,39 @@ conn
 
             uploadDirPromise(sftp, localDistPath, remotePath).then(() => {
               // 3. Run npm install in the remote build directory
-              conn.exec(`cd ${remotePath} && npm install`, (err, stream) => {
-                if (err) throw err;
-                console.log(
-                  `${
-                    env.VERBOSE_LOG ? '\n' : ''
-                  }\x1b[38;5;87mInstalling dependencies...\n\x1b[0m`
-                );
-                stream
-                  .on('close', () => {
-                    console.log(`\x1b[38;5;87mInstallation complete.\n\x1b[0m`);
-                    console.log(
-                      `\x1b[38;5;83mDeployment to \x1b[38;5;214mmydevil \x1b[38;5;83msuccessful.\n\x1b[0m`
-                    );
-                    conn.end(); // Close the connection
-                  })
-                  .on('data', (data) => {
-                    if (env.VERBOSE_LOG) {
-                      const literal = `${data}`;
-                      const parsed = literal.replace('\n', '');
-                      if (parsed.includes('audited')) {
-                        console.log(`\x1b[38;5;87m${parsed}\n\x1b[0m`);
+              conn.exec(
+                `cd ${remotePath} && npm install && devil www restart angulartribe.com`,
+                (err, stream) => {
+                  if (err) throw err;
+                  console.log(
+                    `${
+                      env.VERBOSE_LOG ? '\n' : ''
+                    }\x1b[38;5;87mInstalling dependencies...\n\x1b[0m`
+                  );
+                  stream
+                    .on('close', () => {
+                      console.log(
+                        `\x1b[38;5;87mInstallation complete.\n\x1b[0m`
+                      );
+                      console.log(
+                        `\x1b[38;5;83mDeployment to \x1b[38;5;214mmydevil \x1b[38;5;83msuccessful.\n\x1b[0m`
+                      );
+                      conn.end(); // Close the connection
+                    })
+                    .on('data', (data) => {
+                      if (env.VERBOSE_LOG) {
+                        const literal = `${data}`;
+                        const parsed = literal.replace('\n', '');
+                        if (parsed.includes('audited')) {
+                          console.log(`\x1b[38;5;87m${parsed}\n\x1b[0m`);
+                        }
                       }
-                    }
-                  })
-                  .stderr.on('data', (data) => {
-                    console.log(`\x1b[38;5;87m${data}\n\x1b[0m`);
-                  });
-              });
+                    })
+                    .stderr.on('data', (data) => {
+                      console.log(`\x1b[38;5;87m${data}\n\x1b[0m`);
+                    });
+                }
+              );
             });
           });
         })

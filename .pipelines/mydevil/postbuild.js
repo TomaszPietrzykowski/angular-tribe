@@ -30,6 +30,9 @@ try {
   // Delete original backend build directory
   fs.rmSync(nxBuild, { recursive: true });
 
+  // Rename entry file
+  fs.renameSync(`${destinationDir}/server.mjs`, `${destinationDir}/app.mjs`);
+
   // Copy .env
   if (fs.existsSync('apps/angular-tribe/server/.env')) {
     fs.copyFileSync(
