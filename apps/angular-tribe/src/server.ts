@@ -28,10 +28,7 @@ const angularApp = new AngularNodeAppEngine();
  * });
  * ```
  */
-app.use(cors());
-app.use('/api', (req, res) => {
-    res.json("Server heartbeat success");
-});
+app.use(cors()); // needed?
 
 /**
  * Serve static files from /browser
@@ -61,13 +58,10 @@ app.use('/**', (req, res, next) => {
  * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
  */
 if (isMainModule(import.meta.url)) {
-    const port = process.env['PORT'] || 2000;
+    const port = process.env['PORT'] || 31876;
     app.listen(port, () => {
-        console.log(`Node Express server listening on http://localhost:${port}`);
+        console.log(`Node Express server listening on port:${port}`);
     });
-    // app.listen(() => {
-    //     console.log(`Server started succesfully`);
-    // });
 }
 
 /**

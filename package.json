@@ -6,7 +6,7 @@
     "prerender": "http-server -c-1 dist/apps/public_nodejs/public",
     "dev": "nx serve angular-tribe",
     "build:ssr": "nx build angular-tribe --configuration=production",
-    "serve:ssr": "node dist/apps/angular-tribe/server/server.mjs",
+    "serve:ssr": "node dist/public_nodejs/app.mjs",
     "prebuild": "node .pipelines/mydevil/prebuild.js",
     "build": "npm run build:ssr",
     "postbuild": "node .pipelines/mydevil/postbuild.js",
