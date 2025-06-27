@@ -1,5 +1,10 @@
 <div style="padding: 3rem;">
-    <small>article id number {{ article.id }}</small>
+    <div style="display: flex; justify-content: space-between; width: 100%;">
+        <a routerLink="/articles">
+            <button class="btn btn-outline-info"><- articles</button>
+        </a>
+        <small>article id number {{ article.id }}</small>
+    </div>
     <h1>{{ article.title }}</h1>
     <p>{{ article.content }}</p>
 </div>

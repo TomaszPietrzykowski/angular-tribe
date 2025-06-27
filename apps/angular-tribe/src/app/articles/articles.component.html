@@ -2,12 +2,12 @@
     <h1>All articles</h1>
     <ul>
         @for(article of articles; track article.id) {
-            <li>
-                <a [routerLink]="`/articles/${article.id}`">
-                    <h3>{{ article.title }}</h3>
-                    <p>{{ article.id}}</p>
-                </a>
-            </li>
+        <li>
+            <a [routerLink]="`/article/${article.id}`">
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.id}}</p>
+            </a>
+        </li>
         }
     </ul>
 </div>

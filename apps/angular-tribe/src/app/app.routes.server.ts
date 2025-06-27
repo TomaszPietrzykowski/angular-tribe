@@ -4,7 +4,7 @@ import { db } from './articles/articles-db'
 export const serverRoutes: ServerRoute[] = [
     {
         path: '',
-        renderMode: RenderMode.Server,
+        renderMode: RenderMode.Prerender,
     },
     {
         path: 'articles',

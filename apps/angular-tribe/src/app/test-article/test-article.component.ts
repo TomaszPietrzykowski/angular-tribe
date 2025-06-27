@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { db } from '../articles/articles-db'
 
 interface Article {
@@ -11,7 +11,7 @@ interface Article {
 
 @Component({
     selector: 'app-test-article',
-    imports: [CommonModule],
+    imports: [CommonModule, RouterLink],
     templateUrl: './test-article.component.html',
     styleUrl: './test-article.component.scss',
 })
