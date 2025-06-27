@@ -1,5 +1,7 @@
 import { Route } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component'
+import { ArticlesComponent } from './articles/articles.component';
+import { TestArticleComponent } from './test-article/test-article.component';
 
 export const appRoutes: Route[] = [
     {
@@ -7,7 +9,11 @@ export const appRoutes: Route[] = [
         component: NxWelcomeComponent
     },
     {
-        path: 'api',
-        component: NxWelcomeComponent
-    }
+        path: 'articles',
+        component: ArticlesComponent
+    },
+    {
+        path: 'article/:id',
+        component: TestArticleComponent
+    },
 ];

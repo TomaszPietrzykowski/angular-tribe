@@ -1,4 +1,5 @@
-import { RenderMode, ServerRoute } from '@angular/ssr';
+import { PrerenderFallback, RenderMode, ServerRoute } from '@angular/ssr';
+import { db } from './articles/articles-db'
 
 export const serverRoutes: ServerRoute[] = [
     {
@@ -6,8 +7,16 @@ export const serverRoutes: ServerRoute[] = [
         renderMode: RenderMode.Server,
     },
     {
-        path: 'api',
-        renderMode: RenderMode.Server,
+        path: 'articles',
+        renderMode: RenderMode.Prerender,
+    },
+    {
+        path: 'article/:id',
+        renderMode: RenderMode.Prerender,
+        fallback: PrerenderFallback.Server,
+        async getPrerenderParams() {
+            return db.map(article => ({ id: article.id.toString() }));
+        },
     },
     {
         path: '**',

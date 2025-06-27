@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prerender": "http-server -c-1 dist/apps/public_nodejs/public",
     "dev": "nx serve angular-tribe",
+    "build": "npm run build:ssr",
     "build:ssr": "nx build angular-tribe --configuration=production",
     "serve:ssr": "node dist/public_nodejs/app.mjs",
+    "serve:prerender": "http-server -c-1 dist/apps/angular-tribe/browser",
     "prebuild": "node .pipelines/mydevil/prebuild.js",
-    "build": "npm run build:ssr",
     "postbuild": "node .pipelines/mydevil/postbuild.js",
     "mydevil": "npm run build && node .pipelines/mydevil/mydevil.pipeline.js || node .pipelines/mydevil/deployment-failed.js",
     "deploy": "npm run unit-tests && npm run e2e-tests && npm run build && node .pipelines/mydevil/mydevil.pipeline.js || node .pipelines/mydevil/deployment-failed.js"
