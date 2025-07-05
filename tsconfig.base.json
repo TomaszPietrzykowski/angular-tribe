@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@angular-tribe/ui-layout": ["libs/ui-layout/src/index.ts"],
       "@angular-tribe/workspace-plugin": ["tools/workspace-plugin/src/index.ts"]
     }
   },
