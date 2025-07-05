@@ -17,8 +17,10 @@ export async function generateLibGenerator(
 
     const libraryDirectory = options.directory ? `libs/${options.directory}/${libraryName}` : `libs/${libraryName}`
 
-
     const importPath = `@angular-tribe/${libraryName}`;
+
+    const testRunner = options.skipTests ? UnitTestRunner.None : UnitTestRunner.Jest;
+
 
     await libraryGenerator(tree, {
         name: libraryName,
@@ -27,12 +29,12 @@ export async function generateLibGenerator(
         style: 'scss',
         buildable: true,
         linter: 'eslint',
-        unitTestRunner: UnitTestRunner.Jest,
+        unitTestRunner: testRunner,
         importPath: importPath,
         simpleName: true,
         standalone: true,
         skipModule: true,
-        skipTests: true,
+        skipTests: options.skipTests,
         flat: true,
         strict: true,
         publishable: false,
@@ -41,6 +43,13 @@ export async function generateLibGenerator(
     });
 
     generateFiles(tree, path.join(__dirname, 'files'), libraryDirectory, options);
+
+    // remove README.md from library by default (consider parametrizing)
+    const readmePath = `${libraryDirectory}/README.md`;
+    if (tree.exists(readmePath)) {
+        tree.delete(readmePath);
+    }
+
     await formatFiles(tree);
 }
 

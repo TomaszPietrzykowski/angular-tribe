@@ -8,16 +8,16 @@
       "type": "string",
       "description": "Choose library type",
       "enum": ["feature", "ui", "data", "util"],
-      "x-prompt": "Type"
+      "x-prompt": "Choose library type:"
     },
     "directory": {
       "type": "string",
-      "description": "",
+      "description": "Directory (optional)",
       "$default": {
         "$source": "argv",
         "index": 0
       },
-      "x-prompt": "Directory in /libs (optional)"
+      "x-prompt": "Directory (optional):"
     },
     "name": {
       "type": "string",
@@ -26,9 +26,9 @@
         "$source": "argv",
         "index": 0
       },
-      "x-prompt": "What name would you like to use?"
+      "x-prompt": "Library name:"
     },
-    "flat": {
+    "skipTests": {
       "description": "Skip unit tests?",
       "type": "boolean",
       "default": false,
