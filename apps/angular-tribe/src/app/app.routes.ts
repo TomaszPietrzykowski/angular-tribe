@@ -7,18 +7,20 @@ import { LayoutComponent } from '@angular-tribe/ui-layout';
 export const appRoutes: Route[] = [
     {
         path: '',
-        component: NxWelcomeComponent
-    },
-    {
-        path: 'articles',
-        component: ArticlesComponent
-    },
-    {
-        path: 'article/:id',
-        component: TestArticleComponent
-    },
-    {
-        path: 'test',
-        component: LayoutComponent
-    },
+        component: LayoutComponent,
+        children: [
+            {
+                path: '',
+                component: NxWelcomeComponent
+            },
+            {
+                path: 'articles',
+                component: ArticlesComponent
+            },
+            {
+                path: 'article/:id',
+                component: TestArticleComponent
+            },
+        ]
+    }
 ];

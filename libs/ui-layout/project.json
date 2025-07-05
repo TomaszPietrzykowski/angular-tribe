@@ -10,7 +10,11 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/ui-layout/ng-package.json"
+        "project": "libs/ui-layout/ng-package.json",
+        "styles": [
+          "node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "src/styles.scss"
+        ]
       },
       "configurations": {
         "production": {
