@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "GenerateLib",
+  "title": "Generate Library",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Choose library type",
+      "enum": ["feature", "ui", "data", "util"],
+      "x-prompt": "Type"
+    },
+    "directory": {
+      "type": "string",
+      "description": "",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "Directory in /libs (optional)"
+    },
+    "name": {
+      "type": "string",
+      "description": "",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use?"
+    }
+  },
+  "required": ["type"]
+}
