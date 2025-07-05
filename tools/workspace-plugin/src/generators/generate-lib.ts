@@ -11,11 +11,9 @@ export async function generateLibGenerator(
     tree: Tree,
     options: GenerateLibGeneratorSchema
 ) {
-    const libraryName = options.type === 'data'
-        ? 'data'
-        : options.type === 'feature'
-            ? options.name
-            : `${options.type}-${options.name}`;
+    const libraryName = options.type === 'feature'
+        ? options.name
+        : `${options.type}-${options.name}`;
 
     const libraryDirectory = options.directory ? `libs/${options.directory}/${libraryName}` : `libs/${libraryName}`
 
@@ -32,6 +30,10 @@ export async function generateLibGenerator(
         unitTestRunner: UnitTestRunner.Jest,
         importPath: importPath,
         simpleName: true,
+        standalone: true,
+        skipModule: true,
+        skipTests: true,
+        flat: true,
         strict: true,
         publishable: false,
         setParserOptionsProject: true,

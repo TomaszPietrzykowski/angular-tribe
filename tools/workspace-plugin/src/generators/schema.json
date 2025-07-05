@@ -27,6 +27,12 @@
         "index": 0
       },
       "x-prompt": "What name would you like to use?"
+    },
+    "flat": {
+      "description": "Skip unit tests?",
+      "type": "boolean",
+      "default": false,
+      "x-prompt": "Skip unit tests?"
     }
   },
   "required": ["type"]
