@@ -79,23 +79,20 @@ html {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   line-height: 1.5;
-  tab-size: 4;
+  tab-size: 2;
   scroll-behavior: smooth;
     font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  padding: 0;
 }
 body {
   font-family: inherit;
   line-height: inherit;
   margin: 0;
-  background: radial-gradient(
-    circle at 70% 85%,
-    var(--orange-red),
-    var(--hot-pink),
-    var(--electric-violet)
-  );
+  background-color: #0b0718ef;
+  min-height: 100vh;
 }
 // h1,
 // h2,
@@ -230,6 +227,13 @@ svg {
 }
 #learning-materials {
   padding: 2.5rem 2rem;
+    background: radial-gradient(
+    circle at 70% 85%,
+    var(--orange-red),
+    var(--hot-pink),
+    var(--electric-violet)
+  );
+  color: white;
 }
 #learning-materials h2 {
   font-weight: 500;
@@ -335,11 +339,11 @@ svg {
   font-weight: 300;
   line-height: 1.25rem;
 }
-.button-pill:hover svg,
-.button-pill:hover {
+.button-pill svg,
+.button-pill {
   color: rgba(255, 255, 255, 1) !important;
 }
-.nx-console:hover {
+.nx-console {
   background-color: var(--electric-violet);
 }
 .nx-console svg {
@@ -348,22 +352,30 @@ svg {
 .nx-console-jetbrains {
   margin-top: 2rem;
 }
-.nx-console-jetbrains:hover {
+.nx-console-jetbrains {
   background-color: rgba(255, 49, 140, 1);
 }
 .nx-console-jetbrains svg {
   color: rgba(255, 49, 140, 1);
 }
-#nx-repo:hover {
+#nx-repo {
   background-color: rgba(24, 23, 23, 1);
+  border: 1px solid rgb(68, 68, 68);
 }
 #nx-repo svg {
-  color: rgba(24, 23, 23, 1);
+  color: rgb(247, 242, 242);
 }
 #nx-cloud {
   margin-bottom: 2rem;
   margin-top: 2rem;
   padding: 2.5rem 2rem;
+      background: radial-gradient(
+    circle at 70% 85%,
+    var(--orange-red),
+    var(--hot-pink),
+    var(--electric-violet)
+  );
+  color: white;
 }
 #nx-cloud > div {
   align-items: center;
@@ -459,19 +471,5 @@ summary svg {
   margin-right: 1rem;
   width: 1.5rem;
 }
-#love {
-  color: rgb(255, 255, 255);
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  margin-top: 3.5rem;
-  opacity: 0.6;
-  text-align: center;
-}
-#love svg {
-  color: rgb(253, 231, 231);
-  width: 1.25rem;
-  height: 1.25rem;
-  display: inline;
-  margin-top: -0.25rem;
-}
+
 

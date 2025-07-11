@@ -1,0 +1,5 @@
+<ul>
+  @for(id of routeIds; track id) {
+    <li><a [routerLink]="`/article/${id}`">Article number {{ id }}</a></li>
+  }
+</ul>

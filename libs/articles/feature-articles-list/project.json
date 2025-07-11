@@ -1,0 +1,29 @@
+{
+  "name": "feature-articles-list",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/articles/feature-articles-list/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["type:feature"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/articles/feature-articles-list/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/articles/feature-articles-list/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/articles/feature-articles-list/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

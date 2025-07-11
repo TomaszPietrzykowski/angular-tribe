@@ -18,6 +18,9 @@
       "@angular-tribe/feature-article": [
         "libs/articles/feature-article/src/index.ts"
       ],
+      "@angular-tribe/feature-articles-list": [
+        "libs/articles/feature-articles-list/src/index.ts"
+      ],
       "@angular-tribe/ui-layout": ["libs/ui-layout/src/index.ts"],
       "@angular-tribe/workspace-plugin": ["tools/workspace-plugin/src/index.ts"]
     }
