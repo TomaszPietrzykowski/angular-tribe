@@ -21,6 +21,14 @@ export const appRoutes: Route[] = [
                 path: 'articles/:id',
                 component: FeatureArticleComponent
             },
+            {
+                path: 'editor',
+                component: NxWelcomeComponent
+            },
+            {
+                path: 'contact',
+                component: NxWelcomeComponent
+            },
         ]
     }
 ];

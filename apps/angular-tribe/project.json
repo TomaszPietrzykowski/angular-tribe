@@ -19,12 +19,14 @@
         "assets": [
           {
             "glob": "**/*",
+            "input": "apps/angular-tribe/src/assets"
+          },
+          {
+            "glob": "**/*",
             "input": "apps/angular-tribe/public"
           }
         ],
-        "styles": [
-          "apps/angular-tribe/src/styles.scss"
-        ],
+        "styles": ["apps/angular-tribe/src/styles.scss"],
         "scripts": [
           "node_modules/prismjs/prism.js",
           "node_modules/prismjs/components/prism-csharp.min.js",
