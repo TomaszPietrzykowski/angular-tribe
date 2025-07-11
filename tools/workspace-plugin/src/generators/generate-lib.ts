@@ -11,9 +11,7 @@ export async function generateLibGenerator(
     tree: Tree,
     options: GenerateLibGeneratorSchema
 ) {
-    const libraryName = options.type === 'feature'
-        ? options.name
-        : `${options.type}-${options.name}`;
+    const libraryName = `${options.type}-${options.name}`;
 
     const libraryDirectory = options.directory ? `libs/${options.directory}/${libraryName}` : `libs/${libraryName}`
 

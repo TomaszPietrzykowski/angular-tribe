@@ -1,3 +1,7 @@
+@use '../../../.styles/prismjs-night-owl';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 /* You can add global styles to this file, and also import other style files */
 :root {
   --primary: rgb(255 0 106);
@@ -77,6 +81,10 @@ html {
   line-height: 1.5;
   tab-size: 4;
   scroll-behavior: smooth;
+    font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 body {
   font-family: inherit;
@@ -89,12 +97,12 @@ body {
     var(--electric-violet)
   );
 }
-h1,
-h2,
-p,
-pre {
-  margin: 0;
-}
+// h1,
+// h2,
+// p,
+// pre {
+//   margin: 0;
+// }
 *,
 ::before,
 ::after {
@@ -103,36 +111,25 @@ pre {
   border-style: solid;
   border-color: currentColor;
 }
-h1,
-h2 {
-  font-size: inherit;
-  font-weight: inherit;
-}
+
 a {
   color: inherit;
   text-decoration: inherit;
 }
-pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
-}
-svg {
-  display: block;
-  vertical-align: middle;
-}
+/// check and remove below this line: *************************************************
 svg {
   shape-rendering: auto;
   text-rendering: optimizeLegibility;
 }
-pre {
-  background-color: rgba(55, 65, 81, 1);
-  border-radius: 0.25rem;
-  color: rgba(229, 231, 235, 1);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
-  overflow: auto;
-  padding: 0.5rem 0.75rem;
-}
+// pre {
+//   background-color: rgba(55, 65, 81, 1);
+//   border-radius: 0.25rem;
+//   color: rgba(229, 231, 235, 1);
+//   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+//     'Liberation Mono', 'Courier New', monospace;
+//   overflow: auto;
+//   padding: 0.5rem 0.75rem;
+// }
 .shadow {
   box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -477,15 +474,4 @@ summary svg {
   display: inline;
   margin-top: -0.25rem;
 }
-@media screen and (min-width: 768px) {
-  #hero {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  #hero .logo-container {
-    display: flex;
-  }
-  #middle-content {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4rem;
-  }
-}
+

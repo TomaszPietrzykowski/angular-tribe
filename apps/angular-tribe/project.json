@@ -22,8 +22,23 @@
             "input": "apps/angular-tribe/public"
           }
         ],
-        "styles": ["apps/angular-tribe/src/styles.scss"],
-        "scripts": [],
+        "styles": [
+          "apps/angular-tribe/src/styles.scss"
+        ],
+        "scripts": [
+          "node_modules/prismjs/prism.js",
+          "node_modules/prismjs/components/prism-csharp.min.js",
+          "node_modules/prismjs/components/prism-css.min.js",
+          "node_modules/prismjs/components/prism-javascript.min.js",
+          "node_modules/prismjs/components/prism-markup.min.js",
+          "node_modules/prismjs/components/prism-markup-templating.min.js",
+          "node_modules/prismjs/components/prism-sql.min.js",
+          "node_modules/prismjs/components/prism-typescript.min.js",
+          "node_modules/prismjs/plugins/command-line/prism-command-line.js",
+          "node_modules/mermaid/dist/mermaid.min.js",
+          "node_modules/clipboard/dist/clipboard.min.js",
+          "node_modules/marked/marked.min.js"
+        ],
         "server": "apps/angular-tribe/src/main.server.ts",
         "ssr": {
           "entry": "apps/angular-tribe/src/server.ts"
@@ -36,7 +51,7 @@
             {
               "type": "initial",
               "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumError": "10mb"
             },
             {
               "type": "anyComponentStyle",

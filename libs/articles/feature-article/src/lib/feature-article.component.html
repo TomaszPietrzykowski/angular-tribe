@@ -1,0 +1,12 @@
+<div style="padding: 3rem; max-width: 1050px; margin: auto;">
+    <div style="display: flex; justify-content: space-between; width: 100%;">
+        <a routerLink="/articles">
+            <button class="btn btn-outline-info"><- articles</button>
+        </a>
+    </div>
+    <!-- <input type="file" (change)="onFileSelected($event)" accept=".md"> -->
+    <div *ngIf="markdownContent">
+      <markdown [data]="markdownContent" class="language-markup">
+      </markdown>
+    </div>
+</div>
