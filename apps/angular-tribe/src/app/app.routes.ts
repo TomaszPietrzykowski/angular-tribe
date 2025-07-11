@@ -18,7 +18,7 @@ export const appRoutes: Route[] = [
                 component: FeatureArticlesListComponent
             },
             {
-                path: 'article/:id',
+                path: 'articles/:id',
                 component: FeatureArticleComponent
             },
         ]

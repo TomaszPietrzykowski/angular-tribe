@@ -17,6 +17,12 @@ ul {
   list-style: none;
   align-items: center;
 }
+li {
+  font-weight: 600;
+  a {
+    opacity: 0.7;
+  }
+}
 .navbar-brand h2 {
   margin: 0.8rem;
 }
@@ -26,4 +32,8 @@ ul {
 }
 .navbar-toggle {
   opacity: 0.2;
+}
+.active-link {
+  color: rgb(255, 56, 155);
+  opacity: 1 !important;
 }

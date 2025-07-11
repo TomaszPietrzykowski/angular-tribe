@@ -10,7 +10,7 @@ export const serverRoutes: ServerRoute[] = [
         renderMode: RenderMode.Prerender
     },
     {
-        path: 'article/:id',
+        path: 'articles/:id',
         renderMode: RenderMode.Prerender,
         fallback: PrerenderFallback.Server,
         async getPrerenderParams() {

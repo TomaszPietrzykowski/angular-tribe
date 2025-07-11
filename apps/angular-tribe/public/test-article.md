@@ -14,7 +14,7 @@ Use Skeleton UI like any other fallback component using *ngIf, *ngIf else; Alway
 </div>
 
 <ng-template #loading>
-  <symson-skeleton-ui [config]="config"></symson-skeleton-ui>
+  <skeleton-ui [config]="config"></skeleton-ui>
 </ng-template>
 ```
 
@@ -26,9 +26,9 @@ Array of arrays of objects. Config array represents a main column of the view an
 
 ```typescript
 
-const config: Array<Array<SymsonSkeletonComponent>>;
+const config: Array<Array<SkeletonComponent>>;
 
-interface SymsonSkeletonComponent {
+interface SkeletonComponent {
     component: 'photo-card' | 'insight-card' | 'bar-chart' | 'pie-chart' | 'table' | 'background'
     flex?: number    // flex basis applied to elements in a row, default: 1;
     height?: number  // value in pixels - if not passed uses components defaults;
@@ -86,7 +86,7 @@ Objects defining components have one required property `component` of a union ty
 ## 3. Insight card
 - component: 'insight-card'
 - default height: 130px
-- typical Symson's insight card
+- typical insight card
 
 ## 4. Photo card
 - component': 'photo-card'
